@@ -4,7 +4,6 @@ class CreateSongs < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :artist
       t.string :album
-      t.string :genre
       t.string :artist_img
       t.string :album_img
       t.string :song_link

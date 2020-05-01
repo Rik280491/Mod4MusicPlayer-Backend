@@ -10,40 +10,6 @@ require 'unirest'
 
 
 
-
-# for i in 3135556..4135600
-
-
-#     response = Unirest.get "https://deezerdevs-deezer.p.rapidapi.com/track/#{i}",
-#   headers:{
-#     "X-RapidAPI-Host" => "deezerdevs-deezer.p.rapidapi.com",
-#     "X-RapidAPI-Key" => "b6ab925e73mshc85e09479bf16dbp1dcd6ajsn56ffd8f4fbe0"
-#   }
-
-  
-  
-  
-  
-# if !response.body
-#     break
-# else 
-#   #   track title
-# puts response.body["title"]
-# #   song link
-# puts response.body["link"]
-# # artist
-# puts response.body["artist"]["name"]
-# # artist img
-# puts response.body["artist"]["picture"]
-# # album
-# puts response.body["album"]["title"]
-# #album image
-# puts response.body["album"]["cover"]
-# # genre - not there, remove column? 
-# end 
-# end 
-
-
 for i in [0, 2, 16, 33, 35, 37, 42, 48, 50, 75] 
 response = Unirest.get "https://deezerdevs-deezer.p.rapidapi.com/editorial/#{i}/charts",
   headers:{
@@ -64,7 +30,6 @@ response = Unirest.get "https://deezerdevs-deezer.p.rapidapi.com/editorial/#{i}/
         i+=1
   
     end 
-# REMOVE GENRE COLUMN
 
 end 
   
