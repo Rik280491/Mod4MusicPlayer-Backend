@@ -34,4 +34,3 @@ response = Unirest.get "https://deezerdevs-deezer.p.rapidapi.com/editorial/#{i}/
 end 
   
 
-
