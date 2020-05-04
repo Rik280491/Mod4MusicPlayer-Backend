@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
      def create
        user = User.create(username: params[:username], password: params[:password])
-       render json: user
+       render json: { username: user.username, token: generate_token(id: user.id) }
     end
      
     def log_in
