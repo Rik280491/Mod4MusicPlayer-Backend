@@ -1,6 +1,7 @@
 class PlaylistsController < ApplicationController
     def index 
-        playlists = Playlist.all 
+        current_user = get_user
+        playlists = Playlist.find_by(user:current_user)
         render json: playlists
     end 
     
@@ -10,9 +11,13 @@ class PlaylistsController < ApplicationController
     end
     
     def create
-        
-        playlist = Playlist.create(playlist_params)
+        user = get_user
+
+        playlist = user.playlists.build(playlist_params)
+        playlist.save
+        # error handling 
         render json: playlist
+        
     end 
 
     def destroy
@@ -24,7 +29,7 @@ class PlaylistsController < ApplicationController
     private 
 
     def playlist_params 
-        params.require(:playlist).permit(:name, :user_id)
+        params.require(:playlist).permit(:name)
 
     end 
 
