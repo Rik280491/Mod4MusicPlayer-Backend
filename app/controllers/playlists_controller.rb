@@ -1,7 +1,9 @@
 class PlaylistsController < ApplicationController
     def index 
         current_user = get_user
-        playlists = Playlist.find_by(user:current_user)
+        
+        # playlists = Playlist.where(user_id: current_user.id)
+        playlists = current_user.playlists
         render json: playlists
     end 
     
